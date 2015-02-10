@@ -30,8 +30,22 @@ maxw($mw=$max-width)
 	z-index 10
 	position relative
 
+	&:after
+		pseudo-block()
+		clear both
+
+	.col
+		&:nth-child(1)
+			width (219px + $grid-gutter-width)
+		&:nth-child(2)
+			float right
+			width (640px + $grid-gutter-width)
+
 	.catalog-menu
 		@import 'catalog-menu'
+
+	main
+		@import 'content'
 
 footer
 	@import 'footer'
