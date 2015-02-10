@@ -2,6 +2,36 @@
  * @author Viacheslav Lotsmanov
  */
 
+&
+	font-metrics 15px 23px
+
 img, canvas
 	max-width 100% !important
 	height auto !important
+
+.centered
+	text-align center
+
+ul.brands
+	reset-box-model()
+	list-style none
+	text-align center
+
+	>li
+		&:first-child
+			text-align left
+		&:last-child
+			text-align right
+* + ul.brands
+	padding-top (68px - 17px)
+ul.brands + *
+	padding-top 30px
+
+hr
+	reset-box-model()
+	display block
+	height 1px
+	overflow hidden
+	background #a2a2a2
+* + hr
+	margin-top 40px
