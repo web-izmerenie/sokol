@@ -22,6 +22,7 @@
 			display block
 			absolute right ($grid-gutter-width/2) top 50%
 			transform translateY(-50%)
+			white-space nowrap
 
 			&, >li
 				reset-box-model()
@@ -61,7 +62,7 @@
 		z-index 0
 
 	.bg-data.container
-		relative right ($grid-gutter-width/2)
+		relative right ($grid-gutter-width)
 
 		.phone
 			z-index 1
@@ -123,14 +124,6 @@
 .bottom-line.container
 	position relative
 
-	.col
-		&:nth-child(1)
-			padding 0
-			width 30%
-		&:nth-child(2)
-			padding 0
-			width 70%
-
 	.logo
 		img
 			display block
@@ -142,7 +135,7 @@
 	h1
 		reset-box-model()
 		custom-font('Roboto Thin', normal, 48px, 50px)
-		margin-top (89px - 62px)
+		margin-top 47px
 		padding-bottom 30px
 		z-index 5
 		text-align right
