@@ -1,0 +1,108 @@
+/**
+ * @author Viacheslav Lotsmanov
+ */
+
+>ul
+	list-style none
+	reset-box-model()
+	max-width 219px
+
+>ul>li
+	reset-box-model()
+
+	& + li
+		padding-top 5px
+
+	>dl
+		>dt
+			background #231f20
+			color white
+			text-transform uppercase
+			font-metrics 18px 21px
+			height 50px
+			min-height 50px
+			position relative
+			white-space nowrap
+
+			.middle-helper
+				display inline-block
+				vertical-align middle
+				height 100%
+
+			.title
+				display inline-block
+				vertical-align middle
+				box-sizing border-box
+				padding-left 39%
+				white-space normal
+
+			&:before
+				pseudo-block()
+				size 39% 100%
+				background-position center center
+				background-repeat no-repeat
+				absolute left 0 top 0
+
+			&.navesy:before
+				bg-img('catalog-menu/navesy.png')
+			&.zabory:before
+				bg-img('catalog-menu/zabory.png')
+			&.angary:before
+				bg-img('catalog-menu/angary.png')
+			&.kovannye-izdelia:before
+				bg-img('catalog-menu/kovannye-izdelia.png')
+
+		>dd
+			padding-top 15px
+			$ml = 21px
+
+			>dl>dd>ul, >ul
+				list-style none
+				reset-box-model()
+				margin-left $ml
+
+				>li
+					reset-box-model()
+					font-metrics 15px 28px
+
+					>a
+						display inline
+						color #231f20
+						border-bottom 1px solid #c6cad0
+						transition border-bottom-color $anim-speed $anim-curve
+
+						&, &:hover
+							text-decoration none
+
+						&:hover
+							border-bottom-color alpha(white, 0%)
+
+			>dl
+				&:first-child
+					padding-top 5px
+				&:last-child
+					padding-bottom 5px
+
+				&.opened-list-inside>dt:before
+					pseudo-block('—')
+					absolute left (-($ml)) top -1px
+					width 16px
+					overflow hidden
+
+				>dt
+					font-metrics 20px 24px
+					font-weight bold
+					margin-left $ml
+					relative top -4px
+
+					&, a, a:hover
+						text-decoration none
+						color #333
+
+					a
+						display inline
+						border-bottom 2px solid #333
+						transition border-bottom-color $anim-speed $anim-curve
+
+						&:hover
+							border-bottom-color alpha(white, 0%)

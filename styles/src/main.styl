@@ -24,7 +24,14 @@ maxw($mw=$max-width)
 	maxw()
 	position relative
 	min-height 100%
-	padding-bottom $footer-height
+	padding-bottom ($footer-height + 80px)
+
+.body-grid.container
+	z-index 10
+	position relative
+
+	.catalog-menu
+		@import 'catalog-menu'
 
 footer
 	@import 'footer'
