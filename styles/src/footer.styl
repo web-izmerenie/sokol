@@ -1,0 +1,137 @@
+/**
+ * @author Viacheslav Lotsmanov
+ */
+
+&
+	maxw()
+	height $footer-height
+	margin-top -($footer-height)
+	background #5fa8e6
+	z-index 5
+	position relative
+
+.container.grid
+	&, .col
+		height 100%
+
+	.col
+		white-space nowrap
+
+		&:nth-child(2)
+			relative left -20px
+
+		&:nth-child(3)
+			text-align right
+			relative right -($grid-gutter-width/2)
+
+	.middle-helper
+		display inline-block
+		vertical-align middle
+		height 100%
+
+	.go-to-developer
+		$tc = #075687
+		$tc-hover = #231f20
+
+		display inline-block
+		vertical-align middle
+		font-metrics 13px 15px
+		color $tc
+		transition color $anim-speed $anim-curve
+		white-space nowrap
+
+		&, &:hover
+			text-decoration none
+			border-bottom 0
+
+		img
+			display inline-block
+			size 25px
+			opacity 0.55
+			transition opacity $anim-speed $anim-curve
+			vertical-align middle
+
+		.text
+			display inline-block
+			vertical-align middle
+
+			.developer
+				text-transform uppercase
+				border-bottom 1px solid $tc
+				transition border-bottom-color $anim-speed $anim-curve
+
+		&:hover
+			color $tc-hover
+
+			img
+				opacity 1
+
+			.text .developer
+				border-bottom-color alpha($tc-hover, 0%)
+
+	.info
+		display inline-block
+		vertical-align middle
+		font-metrics 13px 17px
+		white-space normal
+
+		p
+			margin-bottom 0
+
+	.phone
+		display inline-block
+		vertical-align middle
+		z-index 1
+		position relative
+		height 50px
+		color black
+
+		.number-block
+			absolute right 60px top 0
+			white-space nowrap
+
+			.number
+				z-index 2
+				a
+					display block
+					position relative
+					font-metrics 36px 38px
+
+					&:before
+						pseudo-block('8 ')
+						absolute left -28px top 0
+						color white
+
+					&, &:hover
+						color black
+						text-decoration none
+						border-bottom 0
+
+					i
+						display none
+			.text
+				font-metrics 16px 22px
+				z-index 1
+				margin-top -1px
+				box-sizing border-box
+				padding-left 3px
+
+		.call
+			display block
+			size 48px 49px
+			absolute right 0 top 1px
+			font-metrics 0 0
+
+			&, &:hover
+				reset-box-model()
+				text-decoration none
+				border-bottom 0
+				white-space nowrap
+				text-indent -40000px
+				overflow hidden
+
+			&:before
+				pseudo-block()
+				bg('call-me-form-caller-footer.png', center center no-repeat)
+				size 100%
+				absolute
