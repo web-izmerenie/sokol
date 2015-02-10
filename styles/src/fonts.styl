@@ -23,10 +23,13 @@ declare-font(
 		font-style $style
 
 declare-font('Roboto Thin', 250, normal, 'roboto-thin', 'Roboto-Thin')
+declare-font('Roboto Bold Condensed', 700, normal, 'roboto-bold-cond', 'Roboto-BoldCondensed')
 
-custom-font($name, $weight=normal, $font-size=inherit, $line-height=inherit)
+custom-font($name, $font-size=inherit, $line-height=inherit)
 	font-family $name, serif
 	font-metrics $font-size, $line-height
 
 	if $name is 'Roboto Thin'
 		font-weight 250
+	else if $name is 'Roboto Bold Condensed'
+		font-weight 700
