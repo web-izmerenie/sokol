@@ -1,0 +1,142 @@
+/**
+ * @author Viacheslav Lotsmanov
+ */
+
+&
+	min-height ($header-height - $fixed-top-block-height)
+	padding-top $fixed-top-block-height
+
+.fixed-part
+	background #231f20
+	fixed top 0 left 0
+	size 100% $fixed-top-block-height
+	z-index 60
+
+	.main-menu.container
+		display block
+		height $fixed-top-block-height
+		position relative
+
+		ul
+			list-style none
+			display block
+			absolute right ($grid-gutter-width/2) top 50%
+			transform translateY(-50%)
+
+			&, >li
+				reset-box-model()
+
+			>li
+				display inline-block
+				text-transform uppercase
+				margin-left 4.3em
+
+				>a
+					color #63b1f3
+					border-bottom 1px solid #295580
+					transition color $anim-speed $anim-curve,
+						border-bottom-color $anim-speed $anim-curve
+
+					&:hover
+						text-decoration none
+						color white
+						border-bottom-color alpha(white, 0%)
+
+				&.active
+					color #636d63
+
+					>span
+						cursor default
+
+.bg
+	height $header-bg-height
+	background black
+	position relative
+	overflow hidden
+
+	.bg-img
+		display block
+		absolute top 0 left 0
+		size auto 100%
+		z-index 0
+
+	.bg-data.container
+		relative right ($grid-gutter-width/2)
+
+		.phone
+			z-index 1
+			absolute top 35px right 0
+
+			.number-block
+				absolute right 71px top 0
+				white-space nowrap
+
+				.number
+					z-index 2
+					a
+						display block
+						position relative
+						font-metrics 36px 38px
+						text-shadow 2px 5px 2px black
+
+						&:before
+							pseudo-block('8 ')
+							absolute left -28px top 0
+							color #f8df08
+
+						&, &:hover
+							color white
+							text-decoration none
+							border-bottom 0
+
+						i
+							display none
+				.text
+					background white
+					color #231f20
+					font-metrics 16px 22px
+					z-index 1
+					margin-top 1px
+					box-sizing border-box
+					padding-left 3px
+
+			.call
+				display block
+				size 61px 62px
+				absolute right 0 top 0
+				font-metrics 0 0
+
+				&, &:hover
+					reset-box-model()
+					text-decoration none
+					border-bottom 0
+					white-space nowrap
+					text-indent -40000px
+					overflow hidden
+
+				&:before
+					pseudo-block()
+					bg('call-me-form-caller.png', center center no-repeat)
+					size 100%
+					absolute left 0 top 0
+
+.bottom-line.container
+	position relative
+
+	.logo
+		img
+			display block
+			size 255px
+			absolute left 0 top -109px
+			float left
+			z-index 4
+
+	h1
+		reset-box-model()
+		custom-font('Roboto Thin', normal, 48px, 50px)
+		margin-top (89px - 62px)
+		padding-left 30%
+		padding-bottom 30px
+		z-index 5
+		text-align right
+		color #333

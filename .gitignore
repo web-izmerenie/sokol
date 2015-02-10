@@ -1,0 +1,15 @@
+*.gz
+*.tar
+*.bz2
+*.zip
+*.rar
+*.log
+*.sql
+
+# node
+node_modules
+bower_components
+front-end-gulp
+
+**/build.css
+**/build.js
