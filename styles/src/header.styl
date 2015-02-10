@@ -123,6 +123,14 @@
 .bottom-line.container
 	position relative
 
+	.col
+		&:nth-child(1)
+			padding 0
+			width 30%
+		&:nth-child(2)
+			padding 0
+			width 70%
+
 	.logo
 		img
 			display block
@@ -135,7 +143,6 @@
 		reset-box-model()
 		custom-font('Roboto Thin', normal, 48px, 50px)
 		margin-top (89px - 62px)
-		padding-left 30%
 		padding-bottom 30px
 		z-index 5
 		text-align right
