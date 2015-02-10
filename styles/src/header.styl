@@ -6,11 +6,19 @@
 	min-height ($header-height - $fixed-top-block-height)
 	padding-top $fixed-top-block-height
 
+	@media (max-width $screen-sm-max)
+		padding-top 0
+
 .fixed-part
 	background #231f20
 	fixed top 0 left 0
 	size 100% $fixed-top-block-height
 	z-index 60
+
+	@media (max-width $screen-sm-max)
+		position relative
+		height auto
+		padding-y 15px
 
 	.main-menu.container
 		display block
@@ -49,11 +57,28 @@
 					>span
 						cursor default
 
+		@media (max-width $screen-sm-max)
+			height auto
+			text-align center
+
+			ul
+				white-space normal
+				transform none
+				relative right 0 top 0
+				height auto
+
+				>li
+					display block
+					margin-left 0
+
 .bg
 	height $header-bg-height
 	background black
 	position relative
 	overflow hidden
+
+	@media (max-width $screen-sm-max)
+		height ($header-bg-height * 2)
 
 	.bg-img
 		display block
@@ -63,6 +88,10 @@
 
 	.bg-data.container
 		relative right ($grid-gutter-width)
+
+		@media (max-width $screen-sm-max)
+			relative right (-($grid-gutter-width/2))
+			text-align center
 
 		.phone
 			z-index 1
@@ -121,16 +150,37 @@
 					size 100%
 					absolute left 0 top 0
 
+			@media (max-width $screen-sm-max)
+				relative right auto
+
+				.number-block, .call
+					relative left 0 right 0 top 0
+					display inline-block
+					vertical-align middle
+
+					.text
+						text-align left
+
+				.call, .call:hover
+					margin-left 6px
+
 .bottom-line.container
 	position relative
 
 	.logo
 		img
+			$offset-top = 109px
 			display block
 			size 255px
-			absolute left 0 top -109px
+			absolute left 0 top (-($offset-top))
 			float left
 			z-index 4
+
+			@media (max-width $screen-sm-max)
+				relative left 0 top 0
+				float none
+				margin 0 auto
+				margin-top (-($offset-top))
 
 	h1
 		reset-box-model()
@@ -140,3 +190,7 @@
 		z-index 5
 		text-align right
 		color #333
+
+		@media (max-width $screen-sm-max)
+			text-align center
+			margin-top 20px

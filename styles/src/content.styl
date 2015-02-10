@@ -22,6 +22,14 @@ ul.brands
 			text-align left
 		&:last-child
 			text-align right
+
+		@media (max-width $screen-sm-max)
+			&:first-child
+				text-align center
+			&:last-child
+				text-align center
+			& + li
+				margin-top 15px
 * + ul.brands
 	padding-top (68px - 17px)
 ul.brands + *

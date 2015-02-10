@@ -13,6 +13,9 @@
 html, body
 	height 100%
 
+body
+	min-width $min-width
+
 header
 	@import 'header'
 
@@ -26,6 +29,10 @@ maxw($mw=$max-width)
 	min-height 100%
 	padding-bottom ($footer-height + 80px)
 
+	@media (max-width $screen-sm-max)
+		padding-bottom 40px
+		min-height auto
+
 .body-grid.container
 	z-index 10
 	position relative
@@ -38,9 +45,18 @@ maxw($mw=$max-width)
 		&:nth-child(1)
 			width (219px + $grid-gutter-width)
 			margin-left 4px
+
+			@media (max-width $screen-sm-max)
+				width auto
+				margin-left 0
+
 		&:nth-child(2)
 			float right
 			width (640px + $grid-gutter-width)
+
+			@media (max-width $screen-sm-max)
+				width auto
+				float none
 
 	.catalog-menu
 		@import 'catalog-menu'

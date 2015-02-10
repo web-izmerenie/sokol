@@ -10,19 +10,36 @@
 	z-index 5
 	position relative
 
+	@media (max-width $screen-sm-max)
+		height auto
+		margin-top 0
+
 .container.grid
 	&, .col
 		height 100%
 
+		@media (max-width $screen-sm-max)
+			height auto
+
 	.col
 		white-space nowrap
 
+		&:nth-child(1)
+			@media (max-width $screen-sm-max)
+				padding-top 20px
+
 		&:nth-child(2)
 			relative left -20px
+			@media (max-width $screen-sm-max)
+				left 0
+				padding-y 20px
 
 		&:nth-child(3)
 			text-align right
-			relative
+			position relative
+			@media (max-width $screen-sm-max)
+				text-align center
+				padding-bottom 20px
 
 	.middle-helper
 		display inline-block
@@ -134,4 +151,22 @@
 				pseudo-block()
 				bg('call-me-form-caller-footer.png', center center no-repeat)
 				size 100%
-				absolute
+				absolute left 0 top 0
+
+		@media (max-width $screen-sm-max)
+			min-height 50px
+			height auto
+			relative right (-($grid-gutter-width/2))
+
+			.number-block
+				relative right 0
+				display inline-block
+				vertical-align middle
+				.text
+					text-align right
+			.call
+				position relative
+				display inline-block
+				vertical-align middle
+				&, &:hover
+					margin-left 5px

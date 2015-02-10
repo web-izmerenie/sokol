@@ -42,6 +42,15 @@
 				background-repeat no-repeat
 				absolute left 0 top 0
 
+			@media (max-width $screen-sm-max)
+				$iw = 80px
+				.title
+					width 90%
+					text-align center
+					padding-left $iw
+				&:before
+					width $iw
+
 			&.navesy:before
 				bg-img('catalog-menu/navesy.png')
 			&.zabory:before
