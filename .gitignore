@@ -11,5 +11,5 @@ node_modules
 bower_components
 front-end-gulp
 
-**/build.css
-**/build.js
+**/build/
+**/build/
