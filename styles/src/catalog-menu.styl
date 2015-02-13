@@ -73,9 +73,11 @@
 					reset-box-model()
 					font-metrics 15px 28px
 
-					>a
+					>a, >span
 						display inline
 						color #231f20
+
+					>a
 						border-bottom 1px solid #c6cad0
 						transition border-bottom-color $anim-speed $anim-curve
 
@@ -103,12 +105,14 @@
 					margin-left $ml
 					relative top -4px
 
-					&, a, a:hover
+					&, a, a:hover, span
 						text-decoration none
 						color #333
 
-					a
+					a, span
 						display inline
+
+					a
 						border-bottom 2px solid #333
 						transition border-bottom-color $anim-speed $anim-curve
 
